@@ -21,7 +21,7 @@ int main() {
 	fgets(input, SIZE, stdin);
 	*(input + strlen(input) - 1) = '\0';
 
-	printf("\"abc\" and \"aba\" substrings appear %lu times inn %s\n", countAbc(input), input);
+	printf("\"abc\" and \"aba\" substrings appear %lu times in %s\n", countAbc(input), input);
 
 	free(input);
 
