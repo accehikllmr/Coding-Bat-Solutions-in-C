@@ -33,15 +33,17 @@ int main() {
 
 void endX(char *str) {
 
+	// stop sorting characters once last non-null character is reached
 	if (*(str + 1) != '\0') {
-
+		// recursive call, so that sorting starts with rightmost characters first
 		endX(str + 1);
-
+		// rearrange order of characters only if 'x' is first and also not second
 		if (*str == 'x' && *(str + 1) != 'x') {
-
+			// standard swapping algorithm
 			char temp = *str;
 			*str = *(str + 1);
 			*(str + 1) =  temp;
+			// recursive call to keep shifting 'x' to the right, all the way to the end of the string
 			endX(str + 1);
 		}
 	}
