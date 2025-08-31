@@ -6,4 +6,36 @@
  * changeXY("xhixhix") → "yhiyhiy"
  */
 
+#include<stdio.h>
+#include<stdlib.h>
+#include<string.h>
 
+#define SIZE 50
+
+void changeXY(char *);
+
+int main() {
+
+	char *input = (char *)calloc(SIZE, sizeof(char *));
+
+	printf("String: ");
+	fgets(input, SIZE, stdin);
+	*(input + strlen(input) - 1) = '\0';
+
+	printf("%s without 'x' characters is ", input);
+	changeXY(input);
+	printf("%s\n", input);
+
+	free(input);
+
+	return 0;
+}
+
+void changeXY(char *str) {
+
+	if (*str != '\0') {
+
+		if (*str == 'x') *str = 'y';
+		changeXY(str + 1);
+	}
+}
