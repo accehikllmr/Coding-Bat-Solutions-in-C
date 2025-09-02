@@ -22,7 +22,7 @@ int main() {
 	fgets(input, SIZE, stdin);
 	*(input + strlen(input) - 1) = '\0';
 
-	printf("%s without 'x' characters is ", input);
+	printf("%s with 'y' characters replacing 'x' characters is ", input);
 	changeXY(input);
 	printf("%s\n", input);
 
